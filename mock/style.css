@@ -1,0 +1,295 @@
+/* 東和機工レンタル モック
+   配色: 機械の塗装色(エンタメルグリーン)と鋼材グレーを基調。黄色は「空き状況」だけに使う */
+:root {
+  --ink: #1d2327;
+  --steel: #5c6870;
+  --line: #d3d8d5;
+  --paper: #f4f5f3;
+  --white: #fff;
+  --enamel: #1f5a4a;
+  --enamel-dark: #164237;
+  --ok: #2f7d4f;
+  --wait: #b7791f;
+  --font-head: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  --font-body: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  --radius: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, p, dl, dd { margin: 0; }
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.4; }
+
+:focus-visible { outline: 3px solid var(--enamel); outline-offset: 2px; }
+
+.wrap { width: min(1120px, 100% - 40px); margin-inline: auto; }
+.narrow { width: min(760px, 100% - 40px); }
+
+/* ボタン */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-family: var(--font-head);
+  font-weight: 700;
+  line-height: 1.4;
+  border: 2px solid transparent;
+  transition: background-color .15s, color .15s;
+}
+.btn-primary { background: var(--enamel); color: var(--white); }
+.btn-primary:hover { background: var(--enamel-dark); }
+.btn-ghost { border-color: var(--enamel); color: var(--enamel); }
+.btn-ghost:hover { background: var(--enamel); color: var(--white); }
+.btn-light { background: var(--white); color: var(--enamel-dark); }
+.btn-light:hover { background: var(--paper); }
+
+/* ヘッダー */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { display: flex; align-items: center; gap: 32px; min-height: 72px; }
+.logo { font-family: var(--font-head); font-weight: 900; font-size: 1.35rem; letter-spacing: .04em; }
+.logo span { font-weight: 500; color: var(--enamel); margin-left: .25em; }
+.gnav { display: flex; gap: 28px; margin-left: auto; font-weight: 500; font-size: .95rem; }
+.gnav a { padding: 4px 0; border-bottom: 2px solid transparent; }
+.gnav a:hover { border-bottom-color: var(--enamel); }
+.header-cta { display: flex; align-items: center; gap: 20px; }
+.tel { font-family: var(--font-head); font-weight: 700; font-size: 1.15rem; line-height: 1.2; text-align: right; }
+.tel small { display: block; font-size: .7rem; font-weight: 500; color: var(--steel); }
+
+/* ヒーロー */
+.hero { background: var(--white); border-bottom: 1px solid var(--line); }
+.hero-inner {
+  display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px;
+  align-items: center; padding-block: 72px;
+}
+.hero h1 { font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 900; letter-spacing: .02em; }
+.hero-copy p { margin-top: 24px; max-width: 34em; color: var(--steel); }
+.hero-actions { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+
+/* 銘板風パネル（この画面の記憶に残す要素） */
+.plate {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 20px 24px 8px;
+  position: relative;
+}
+.plate::before, .plate::after {
+  content: ""; position: absolute; top: 12px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--steel);
+}
+.plate::before { left: 10px; }
+.plate::after { right: 10px; }
+.plate-title {
+  text-align: center; font-family: var(--font-head); font-weight: 900;
+  letter-spacing: .2em; padding-bottom: 12px; border-bottom: 2px solid var(--ink);
+}
+.plate dl > div {
+  display: grid; grid-template-columns: 5.5em 1fr; gap: 12px;
+  padding: 12px 0; border-bottom: 1px solid var(--line); font-size: .92rem;
+}
+.plate dl > div:last-child { border-bottom: 0; }
+.plate dt { font-weight: 700; }
+
+/* セクション共通 */
+.section { padding-block: 80px; }
+.section-tint { background: var(--white); border-block: 1px solid var(--line); }
+.section-head { margin-bottom: 32px; }
+.section-head h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 900; }
+.section-head p { margin-top: 8px; color: var(--steel); }
+
+/* カテゴリ絞り込み */
+.filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+.filter a {
+  display: block; padding: 6px 16px; font-size: .9rem; font-weight: 500;
+  background: var(--white); border: 1px solid var(--line); border-radius: 999px;
+}
+.filter a:hover { border-color: var(--enamel); }
+.filter a.is-current { background: var(--enamel); border-color: var(--enamel); color: var(--white); }
+
+/* 機械カード */
+.machine-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.machine {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.machine:hover { border-color: var(--enamel); }
+.machine-link { display: block; height: 100%; }
+.machine-photo {
+  position: relative; aspect-ratio: 4 / 3;
+  background: repeating-linear-gradient(45deg, #e6e9e7 0 12px, #eef0ee 12px 24px);
+  display: grid; place-items: center;
+}
+.ph { color: var(--steel); font-size: .85rem; }
+.status {
+  position: absolute; top: 12px; left: 12px;
+  padding: 2px 12px; font-size: .78rem; font-weight: 700; color: var(--white);
+  border-radius: var(--radius);
+}
+.status-ok { background: var(--ok); }
+.status-wait { background: var(--wait); }
+.machine-body { padding: 20px; }
+.machine-cat { font-size: .8rem; font-weight: 700; color: var(--enamel); }
+.machine h3 { font-size: 1.15rem; font-weight: 700; margin-top: 2px; }
+.machine-maker { font-size: .82rem; color: var(--steel); }
+.spec { margin-top: 16px; border-top: 1px solid var(--line); }
+.spec > div {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 6px 0; border-bottom: 1px solid var(--line); font-size: .85rem;
+}
+.spec dt { color: var(--steel); }
+.spec dd { font-weight: 500; text-align: right; }
+.price {
+  margin-top: 16px; text-align: right;
+  font-family: var(--font-head); font-weight: 900; font-size: 1.5rem;
+}
+.price small { font-size: .78rem; font-weight: 500; color: var(--steel); margin-inline: 2px; }
+
+/* ページャー */
+.pager { display: flex; justify-content: center; gap: 8px; margin-top: 48px; }
+.pager a {
+  min-width: 44px; padding: 8px 14px; text-align: center;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.pager a:hover { border-color: var(--enamel); }
+.pager a.is-current { background: var(--ink); border-color: var(--ink); color: var(--white); }
+
+/* 選ばれる理由 */
+.strengths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.strengths > div { border-top: 4px solid var(--enamel); padding-top: 20px; }
+.strengths h3 { font-size: 1.15rem; margin-bottom: 8px; }
+.strengths p { color: var(--steel); font-size: .95rem; }
+
+/* 流れ */
+.flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; counter-reset: step; }
+.flow li {
+  counter-increment: step; position: relative;
+  padding: 24px 24px 24px 24px; background: var(--white);
+  border: 1px solid var(--line); margin-left: -1px;
+}
+.flow li::before {
+  content: counter(step); display: grid; place-items: center;
+  width: 32px; height: 32px; margin-bottom: 12px;
+  background: var(--enamel); color: var(--white);
+  font-family: var(--font-head); font-weight: 700; border-radius: 50%;
+}
+.flow h3 { font-size: 1.05rem; margin-bottom: 4px; }
+.flow p { font-size: .88rem; color: var(--steel); }
+
+/* FAQ */
+details { border-bottom: 1px solid var(--line); }
+summary {
+  cursor: pointer; list-style: none; position: relative;
+  padding: 20px 40px 20px 0; font-weight: 700;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: "+"; position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  font-size: 1.4rem; color: var(--enamel);
+}
+details[open] summary::after { content: "−"; }
+details p { padding: 0 0 20px; color: var(--steel); }
+
+/* お問い合わせ */
+.contact { background: var(--enamel-dark); color: var(--white); padding-block: 64px; }
+.contact-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+.contact h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 900; }
+.contact p { margin-top: 8px; opacity: .85; }
+.contact-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.contact-tel { font-family: var(--font-head); font-weight: 900; font-size: 1.6rem; }
+
+/* フッター */
+.site-footer { background: var(--ink); color: #c9cfd2; padding-top: 48px; font-size: .88rem; }
+.footer-inner { display: grid; grid-template-columns: 1fr 1.4fr auto; gap: 32px; align-items: start; }
+.logo-foot { color: var(--white); }
+.logo-foot span { color: #8fc2b3; }
+.site-footer ul { display: grid; gap: 4px; }
+.site-footer a:hover { color: var(--white); text-decoration: underline; }
+.copy { text-align: center; margin-top: 40px; padding: 16px; border-top: 1px solid #2e373c; font-size: .78rem; }
+
+/* レスポンシブ */
+@media (max-width: 960px) {
+  .gnav { display: none; }
+  .header-cta { margin-left: auto; }
+  .hero-inner { grid-template-columns: 1fr; padding-block: 48px; }
+  .machine-grid { grid-template-columns: repeat(2, 1fr); }
+  .strengths { grid-template-columns: 1fr; gap: 28px; }
+  .flow { grid-template-columns: repeat(2, 1fr); }
+  .footer-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .section { padding-block: 56px; }
+  .tel { display: none; }
+  .machine-grid { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; }
+  .flow li { margin-left: 0; margin-top: -1px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+
+/* ===== 詳細ページ ===== */
+.breadcrumb { display: flex; flex-wrap: wrap; gap: 8px; padding: 20px 0 0; font-size: .82rem; color: var(--steel); }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span::before { content: "/"; margin-right: 8px; color: var(--line); }
+
+.detail { padding-block: 32px 64px; }
+.detail-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: start; }
+.detail-photo {
+  position: relative; aspect-ratio: 4 / 3; display: grid; place-items: center;
+  background: repeating-linear-gradient(45deg, #e6e9e7 0 12px, #eef0ee 12px 24px);
+  border: 1px solid var(--line); border-radius: var(--radius);
+}
+.thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 8px; }
+.thumbs li {
+  aspect-ratio: 4 / 3; display: grid; place-items: center; cursor: pointer;
+  background: #e9ece9; border: 2px solid transparent; border-radius: var(--radius);
+}
+.thumbs li.is-current { border-color: var(--enamel); }
+
+.detail-summary h1 { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 900; margin-top: 4px; }
+.detail-price { margin-top: 24px; padding: 16px 0; border-block: 2px solid var(--ink); }
+.detail-price .price { margin-top: 0; text-align: left; }
+.price-lg { font-size: 2.2rem; }
+.note { font-size: .8rem; color: var(--steel); }
+.spec-sm { margin-top: 16px; }
+.detail-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+
+.detail-body { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+.detail-body p { margin-bottom: 1em; max-width: 36em; }
+.h-sub { font-size: 1.25rem; font-weight: 900; margin: 0 0 12px; }
+.detail-body > div > .h-sub:not(:first-child) { margin-top: 32px; }
+.plain-list li { padding: 6px 0 6px 1.2em; position: relative; }
+.plain-list li::before {
+  content: ""; position: absolute; left: 0; top: 1.15em;
+  width: 6px; height: 6px; background: var(--enamel);
+}
+.spec-table { width: 100%; border-collapse: collapse; background: var(--paper); border: 2px solid var(--ink); }
+.spec-table th, .spec-table td { padding: 10px 16px; text-align: left; border-bottom: 1px solid var(--line); font-size: .92rem; }
+.spec-table tr:last-child th, .spec-table tr:last-child td { border-bottom: 0; }
+.spec-table th { width: 46%; font-weight: 700; background: #eceeeb; }
+.back { margin-top: 40px; }
+
+@media (max-width: 960px) {
+  .detail-inner, .detail-body { grid-template-columns: 1fr; gap: 32px; }
+}

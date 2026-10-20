@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>東和機工レンタル | 工作機械を必要な期間だけ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#">東和機工<span>レンタル</span></a>
+    <nav class="gnav" aria-label="メインメニュー">
+      <a href="#machines">機械一覧</a>
+      <a href="#strengths">選ばれる理由</a>
+      <a href="#flow">ご利用の流れ</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+    <div class="header-cta">
+      <a class="tel" href="tel:0312345678">03-1234-5678<small>平日 9:00–18:00</small></a>
+      <a class="btn btn-primary" href="#contact">見積もり依頼</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <h1>買わずに、使う。<br>工作機械を必要な期間だけ。</h1>
+      <p>旋盤、フライス盤、マシニングセンタまで。試作や短納期の案件、設備の入れ替え期間に、整備済みの機械を最短1週間からお貸しします。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#machines">機械を探す</a>
+        <a class="btn btn-ghost" href="#contact">相談する</a>
+      </div>
+    </div>
+
+    <aside class="plate" aria-label="サービス概要">
+      <p class="plate-title">RENTAL SPEC</p>
+      <dl>
+        <div><dt>取扱機種</dt><dd>旋盤 / フライス盤 / MC / 研削盤 / 溶接機</dd></div>
+        <div><dt>貸出期間</dt><dd>1週間〜（長期割引あり）</dd></div>
+        <div><dt>搬入設置</dt><dd>関東一円 立会い設置</dd></div>
+        <div><dt>整備</dt><dd>貸出前に精度検査・点検済み</dd></div>
+        <div><dt>保守</dt><dd>故障時は代替機を手配</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- 機械一覧（WordPress: カスタム投稿タイプ machine のアーカイブ想定） -->
+<section class="section" id="machines">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>レンタル機械一覧</h2>
+      <p>空き状況は毎日更新しています。</p>
+    </div>
+
+    <ul class="filter" aria-label="カテゴリで絞り込み">
+      <li><a class="is-current" href="#">すべて</a></li>
+      <li><a href="#">旋盤</a></li>
+      <li><a href="#">フライス盤</a></li>
+      <li><a href="#">マシニングセンタ</a></li>
+      <li><a href="#">研削盤</a></li>
+      <li><a href="#">溶接機</a></li>
+    </ul>
+
+    <div class="machine-grid">
+
+      <article class="machine">
+        <a class="machine-link" href="machine-detail.html">
+          <div class="machine-photo"><span class="status status-ok">空きあり</span><span class="ph">機械写真</span></div>
+          <div class="machine-body">
+            <p class="machine-cat">旋盤</p>
+            <h3>汎用旋盤 TL-460</h3>
+            <p class="machine-maker">東和精機 / 2018年製</p>
+            <dl class="spec">
+              <div><dt>振り</dt><dd>460 mm</dd></div>
+              <div><dt>心間</dt><dd>1,000 mm</dd></div>
+              <div><dt>主軸回転数</dt><dd>40–2,000 min⁻¹</dd></div>
+            </dl>
+            <p class="price"><small>月額</small>¥120,000<small>〜</small></p>
+          </div>
+        </a>
+      </article>
+
+      <article class="machine">
+        <a class="machine-link" href="machine-detail.html">
+          <div class="machine-photo"><span class="status status-ok">空きあり</span><span class="ph">機械写真</span></div>
+          <div class="machine-body">
+            <p class="machine-cat">マシニングセンタ</p>
+            <h3>立形MC VX-500</h3>
+            <p class="machine-maker">北斗工機 / 2020年製</p>
+            <dl class="spec">
+              <div><dt>X/Y/Z軸</dt><dd>510/400/350 mm</dd></div>
+              <div><dt>主軸回転数</dt><dd>12,000 min⁻¹</dd></div>
+              <div><dt>ATC</dt><dd>24本</dd></div>
+            </dl>
+            <p class="price"><small>月額</small>¥480,000<small>〜</small></p>
+          </div>
+        </a>
+      </article>
+
+      <article class="machine">
+        <a class="machine-link" href="machine-detail.html">
+          <div class="machine-photo"><span class="status status-wait">予約中</span><span class="ph">機械写真</span></div>
+          <div class="machine-body">
+            <p class="machine-cat">フライス盤</p>
+            <h3>ニー形フライス盤 KM-3</h3>
+            <p class="machine-maker">大和製作所 / 2016年製</p>
+            <dl class="spec">
+              <div><dt>テーブル</dt><dd>1,200×280 mm</dd></div>
+              <div><dt>主軸回転数</dt><dd>60–3,600 min⁻¹</dd></div>
+              <div><dt>主軸テーパ</dt><dd>NT40</dd></div>
+            </dl>
+            <p class="price"><small>月額</small>¥90,000<small>〜</small></p>
+          </div>
+        </a>
+      </article>
+
+      <article class="machine">
+        <a class="machine-link" href="machine-detail.html">
+          <div class="machine-photo"><span class="status status-ok">空きあり</span><span class="ph">機械写真</span></div>
+          <div class="machine-body">
+            <p class="machine-cat">研削盤</p>
+            <h3>平面研削盤 SG-818</h3>
+            <p class="machine-maker">東和精機 / 2019年製</p>
+            <dl class="spec">
+              <div><dt>テーブル</dt><dd>200×450 mm</dd></div>
+              <div><dt>砥石径</dt><dd>205 mm</dd></div>
+              <div><dt>送り</dt><dd>手動/自動</dd></div>
+            </dl>
+            <p class="price"><small>月額</small>¥100,000<small>〜</small></p>
+          </div>
+        </a>
+      </article>
+
+      <article class="machine">
+        <a class="machine-link" href="machine-detail.html">
+          <div class="machine-photo"><span class="status status-ok">空きあり</span><span class="ph">機械写真</span></div>
+          <div class="machine-body">
+            <p class="machine-cat">溶接機</p>
+            <h3>半自動溶接機 WM-350</h3>
+            <p class="machine-maker">日進電機 / 2021年製</p>
+            <dl class="spec">
+              <div><dt>定格電流</dt><dd>350 A</dd></div>
+              <div><dt>電源</dt><dd>三相200V</dd></div>
+              <div><dt>ワイヤ径</dt><dd>0.8–1.2 mm</dd></div>
+            </dl>
+            <p class="price"><small>月額</small>¥35,000<small>〜</small></p>
+          </div>
+        </a>
+      </article>
+
+      <article class="machine">
+        <a class="machine-link" href="machine-detail.html">
+          <div class="machine-photo"><span class="status status-wait">予約中</span><span class="ph">機械写真</span></div>
+          <div class="machine-body">
+            <p class="machine-cat">マシニングセンタ</p>
+            <h3>横形MC HX-400</h3>
+            <p class="machine-maker">北斗工機 / 2017年製</p>
+            <dl class="spec">
+              <div><dt>パレット</dt><dd>400×400 mm</dd></div>
+              <div><dt>主軸回転数</dt><dd>10,000 min⁻¹</dd></div>
+              <div><dt>ATC</dt><dd>40本</dd></div>
+            </dl>
+            <p class="price"><small>月額</small>¥650,000<small>〜</small></p>
+          </div>
+        </a>
+      </article>
+
+    </div>
+
+    <nav class="pager" aria-label="ページ送り">
+      <a class="is-current" href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">次へ</a>
+    </nav>
+  </div>
+</section>
+
+<!-- 選ばれる理由 -->
+<section class="section section-tint" id="strengths">
+  <div class="wrap">
+    <div class="section-head"><h2>選ばれる理由</h2></div>
+    <div class="strengths">
+      <div>
+        <h3>1週間から借りられる</h3>
+        <p>試作や納期が重なった時期だけ。設備投資を抱えずに受注できます。</p>
+      </div>
+      <div>
+        <h3>貸出前に精度を検査</h3>
+        <p>全機種、貸出のたびに精度検査と消耗部品の交換を行います。</p>
+      </div>
+      <div>
+        <h3>搬入から設置まで一括</h3>
+        <p>専任スタッフが立ち会い、水平出しと試運転までご対応します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 流れ（順序のある内容） -->
+<section class="section" id="flow">
+  <div class="wrap">
+    <div class="section-head"><h2>ご利用の流れ</h2></div>
+    <ol class="flow">
+      <li><h3>機械を選ぶ</h3><p>一覧から希望の機械と期間を確認します。</p></li>
+      <li><h3>見積もり依頼</h3><p>フォームか電話で連絡。1営業日以内に回答します。</p></li>
+      <li><h3>契約・搬入</h3><p>契約後、日程を調整して搬入・設置します。</p></li>
+      <li><h3>返却</h3><p>期間終了後に引き取りに伺います。</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-tint" id="faq">
+  <div class="wrap narrow">
+    <div class="section-head"><h2>よくある質問</h2></div>
+    <details>
+      <summary>最短の貸出期間はどれくらいですか？</summary>
+      <p>1週間からご利用いただけます。機種により最短期間が異なる場合があります。</p>
+    </details>
+    <details>
+      <summary>工具や治具も借りられますか？</summary>
+      <p>バイトやエンドミルなど基本工具のセット貸しが可能です。見積もり時にご相談ください。</p>
+    </details>
+    <details>
+      <summary>配送エリアを教えてください。</summary>
+      <p>関東一円に対応しています。それ以外の地域もお問い合わせください。</p>
+    </details>
+    <details>
+      <summary>操作や段取りの講習はありますか？</summary>
+      <p>初回設置時に操作説明を行います。有償で技術者の派遣も承ります。</p>
+    </details>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="contact" id="contact">
+  <div class="wrap contact-inner">
+    <div>
+      <h2>機械の空き状況・料金のご相談</h2>
+      <p>お探しの加工内容と希望期間をお知らせください。最適な機械をご提案します。</p>
+    </div>
+    <div class="contact-actions">
+      <a class="btn btn-light" href="#">見積もりフォームへ</a>
+      <a class="contact-tel" href="tel:0312345678">03-1234-5678</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="logo logo-foot">東和機工<span>レンタル</span></p>
+    <p>〒100-0000 東京都○○区○○ 1-2-3<br>古物商許可 第000000000000号</p>
+    <ul>
+      <li><a href="#">会社概要</a></li>
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">特定商取引法に基づく表記</a></li>
+    </ul>
+  </div>
+  <p class="copy">© 東和機工レンタル</p>
+</footer>
+
+</body>
+</html>

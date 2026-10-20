@@ -1,0 +1,26 @@
+/* 一覧 */
+.column-image { width: 64px; }
+.tkmr-thumb { width: 48px; height: 48px; object-fit: cover; border-radius: 3px; display: block; }
+.tkmr-thumb-empty { background: #e6e9e7; }
+.column-status { width: 100px; }
+.column-monthly_price { width: 110px; }
+.column-updated_at { width: 130px; }
+
+.tkmr-badge {
+	display: inline-block;
+	padding: 1px 10px;
+	border-radius: 3px;
+	font-size: 12px;
+	font-weight: 600;
+	color: #fff;
+}
+.tkmr-badge-available { background: #2f7d4f; }
+.tkmr-badge-reserved { background: #b7791f; }
+.tkmr-badge-unavailable { background: #787c82; }
+
+/* 編集フォーム */
+.required { color: #d63638; }
+#tkmr-image-preview img { max-width: 240px; height: auto; display: block; margin-bottom: 8px; border: 1px solid #c3c4c7; }
+.tkmr-specs { max-width: 720px; }
+.tkmr-specs td { vertical-align: middle; }
+.tkmr-specs input { width: 100%; }
